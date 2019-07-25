@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @name            usuarioSchema
- * @description     Modelo de datos para un objeto usuario
+ * @description     Modelo de datos para un objeto usuario en Mongo
  *
  */
 const mongoose_1 = require("mongoose");
-const usuarioSchema = new mongoose_1.Schema({
+const USER_SCHEMA = new mongoose_1.Schema({
     firstName: {
         type: String,
         required: true
@@ -16,4 +16,4 @@ const usuarioSchema = new mongoose_1.Schema({
         required: true
     }
 });
-exports.Usuario = mongoose_1.model('Usuario', usuarioSchema);
+exports.Usuario = mongoose_1.model('Usuario', USER_SCHEMA);

@@ -8,11 +8,11 @@ import cors from 'cors';
 import graphqlHTTP from "express-graphql";
 import schema from './graphql/schema';
 // Servidor
-const server = new Server;
+const SERVER = new Server;
 // Configuración de cors
-server.app.use( cors({ origin: true, credentials: false }));
+SERVER.app.use( cors({ origin: true, credentials: false }));
 // Unico enpoint GraphQL -- messageId parametro para pasar variable
-server.app.use('/graphql', graphqlHTTP( 
+SERVER.app.use('/graphql', graphqlHTTP( 
     (request: any) => ({
         graphiql: true, 
         schema: schema, 
@@ -20,8 +20,8 @@ server.app.use('/graphql', graphqlHTTP(
     })
 ));
 // Configuración de conexión a MongoDB
-server.conection();
+SERVER.conection();
 // Levantar el servidor
-server.start( () => {
-    console.log(`****** Puerto de conexión: ${server.port}`);
+SERVER.start( () => {
+    console.log(`****** Puerto de conexión: ${SERVER.port}`);
 });

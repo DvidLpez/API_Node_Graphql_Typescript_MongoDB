@@ -13,18 +13,18 @@ const cors_1 = __importDefault(require("cors"));
 const express_graphql_1 = __importDefault(require("express-graphql"));
 const schema_1 = __importDefault(require("./graphql/schema"));
 // Servidor
-const server = new server_1.default;
+const SERVER = new server_1.default;
 // Configuración de cors
-server.app.use(cors_1.default({ origin: true, credentials: false }));
+SERVER.app.use(cors_1.default({ origin: true, credentials: false }));
 // Unico enpoint GraphQL -- messageId parametro para pasar variable
-server.app.use('/graphql', express_graphql_1.default((request) => ({
+SERVER.app.use('/graphql', express_graphql_1.default((request) => ({
     graphiql: true,
     schema: schema_1.default,
     context: { messageId: "test" }
 })));
 // Configuración de conexión a MongoDB
-server.conection();
+SERVER.conection();
 // Levantar el servidor
-server.start(() => {
-    console.log(`****** Puerto de conexión: ${server.port}`);
+SERVER.start(() => {
+    console.log(`****** Puerto de conexión: ${SERVER.port}`);
 });

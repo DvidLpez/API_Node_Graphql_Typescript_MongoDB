@@ -1,16 +1,13 @@
 /**
  * @name            usuarioSchema
- * @description     Modelo de datos para un objeto usuario
+ * @description     Modelo de datos para un objeto usuario en Mongo
  * 
  */
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model } from 'mongoose';
+import { IUsuario } from '../interfaces/usuario';
 
-interface IUsuario extends Document {
-   firstName: string;
-   lastName: string;
-}
 
-const usuarioSchema = new Schema({
+const USER_SCHEMA = new Schema({
 
    firstName: {
       type: String,
@@ -22,7 +19,7 @@ const usuarioSchema = new Schema({
    }
 });
 
-export const Usuario = model<IUsuario>('Usuario', usuarioSchema);
+export const Usuario = model<IUsuario>('Usuario', USER_SCHEMA);
 
 
 
