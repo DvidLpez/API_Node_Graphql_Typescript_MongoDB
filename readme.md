@@ -40,7 +40,8 @@ npm install @types/cors --save-dev
 ## Usage
 
 ```
-tsc -w / entra en modo observador
+tsc -w            -> Entra en modo observador
+nodemon dist      -> Start server
 
 ```
 
